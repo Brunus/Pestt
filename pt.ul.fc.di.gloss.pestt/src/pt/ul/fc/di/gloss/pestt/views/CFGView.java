@@ -26,8 +26,7 @@ import org.eclipse.zest.core.viewers.IZoomableWorkbenchPart;
 import org.eclipse.zest.core.viewers.ZoomContributionViewItem;
 import org.eclipse.zest.core.widgets.ZestStyles;
 import org.eclipse.zest.layouts.LayoutAlgorithm;
-import org.eclipse.zest.layouts.LayoutStyles;
-import org.eclipse.zest.layouts.algorithms.TreeLayoutAlgorithm;
+import org.eclipse.zest.layouts.algorithms.SpaceTreeLayoutAlgorithm;
 
 import pt.ul.fc.di.gloss.pestt.domain.CFG;
 import pt.ul.fc.di.gloss.pestt.domain.LabelContentProvider;
@@ -105,7 +104,7 @@ public class CFGView extends ViewPart implements IZoomableWorkbenchPart {
 	 */
 	public CFGView() {
 	}
-
+ 
 	/**
 	 * This is a callback that will allow us
 	 * to create the viewer and initialize it.
@@ -138,10 +137,12 @@ public class CFGView extends ViewPart implements IZoomableWorkbenchPart {
 	private LayoutAlgorithm setLayout() {
 		LayoutAlgorithm layout;
 		//layout = new SpringLayoutAlgorithm(LayoutStyles.NO_LAYOUT_NODE_RESIZING);
-		layout = new TreeLayoutAlgorithm(LayoutStyles.NO_LAYOUT_NODE_RESIZING);
+		//layout = new TreeLayoutAlgorithm(LayoutStyles.NO_LAYOUT_NODE_RESIZING);
 	    //layout = new GridLayoutAlgorithm(LayoutStyles.NO_LAYOUT_NODE_RESIZING);
 		//layout = new HorizontalTreeLayoutAlgorithm(LayoutStyles.NO_LAYOUT_NODE_RESIZING);
 		//layout = new RadialLayoutAlgorithm(LayoutStyles.NO_LAYOUT_NODE_RESIZING);
+		//layout = new DirectedGraphLayoutAlgorithm();
+		layout = new SpaceTreeLayoutAlgorithm();
 		return layout;
 
 	}

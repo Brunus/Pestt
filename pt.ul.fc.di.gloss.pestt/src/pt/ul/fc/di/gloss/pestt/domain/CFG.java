@@ -49,6 +49,11 @@ public class CFG {
 		dag.addMetadata(e48, "i>numPrimes-1");
 		
 		dag.addEdge(n8, n2);
+		
+		Node<String> n6 = dag.addFinalNode("6");
+		Edge<Node<String>> e56 = dag.addEdge(n5, n6);
+		Edge<Node<String>> e68 = dag.addEdge(n6, n8);
+		Edge<Node<String>> e62 = dag.addEdge(n6, n2);
 	}
 	
 	public Collection<Node<String>> getNodes () {
